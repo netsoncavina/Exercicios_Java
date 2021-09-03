@@ -1,0 +1,38 @@
+Apesar de os exercicios não serem feitos pensando em Orientação a Objetos, eu tentei aplicar o maximo possivel para praticar.
+
+Sobre os metodos construtores:
+Em todos os exercicios, na classe do objeto (todos os pacotes tem duas classes: a main e a do objeto), eu criei 2 metodos construtores, um que eu chamei de "construtor vazio" e outro de "construtor completo".
+A diferença entre eles é que com o "construtor completo", o objeto é criado de forma direta, sem a necessidade de metodos "setTalAtributo".
+
+Ex baseado no exercicio 18: 
+	Classe Pessoa: 
+	
+	"Construtor completo"
+	public Pessoa(String nome, String sexo, int idade){
+        
+	// As linhas a seguir substituem a necessidade dos metodos "Set"
+	  this.nome = nome;
+          this.sexo = sexo;
+          this.idade = idade;
+    	}
+
+	"Construtor vazio"
+	public Pessoa(){}
+	// Aqui são necessarios os metodos "Set"
+	setNome(){}
+	setSexo(){}
+	setIdade(){}
+
+Sobre os métodos Get:
+Por boas praticas, nós deixamos os atributos das classes como "private", então eles são acessados somente dentro da Classe. Então, caso eu queira acessar algum valor, como o nome da pessoa (seguindo o exemplo anterior), eu preciso de um metodo "Get", como "GetNome(){}".
+
+Ex:
+	public String getNome(){
+          return this.nome;
+    	}
+
+Assim o metodo me  retorna o nome da pessoa, sem eu precisar acessa-lo diretamente.
+Obs: Caso deixemos o atributo como "public", ele pode ser acessado de forma direta, como "pessoa.nome". O problema disso é que além de ser facilmente acessado, ele fica exposto a ser modificado sem utilizar o metodo "Set", ja que "pessoa.nome = ~qualquercoisa~" já mudaria o objeto. 
+
+A classe Scanner que eu utilizei em todos os exercicios serve pra receber o input do usuario. Não sei se é a melhor forma, mas foi a que eu encontrei.
+No final de todos os arquivos "Main" tem uma sessão onde eu fecho o input [input.close()], as vezes que eu testei sem não houve erro, mas o VS Code apontava como algo a ser corrigido
